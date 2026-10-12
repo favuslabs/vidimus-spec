@@ -96,8 +96,8 @@ contribution.
 | Repository | Purpose | Status |
 |---|---|---|
 | **vidimus-spec** (this one) | Specification: container model, content model, both conformance profiles, security requirements | Published |
-| Core library (name pending) | Reference implementation: parser/writer | In development |
-| Format adapters (name pending) | Import/export adapters (LaTeX first) | Planned |
+| Core library (name pending) | Reference implementation: parser/writer | In development, not yet public |
+| Format adapters (name pending) | Import/export adapters (LaTeX first) | Planned, not yet public |
 
 ## Naming
 

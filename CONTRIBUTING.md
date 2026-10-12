@@ -11,8 +11,9 @@ issue, pull request, and discussion in this repository.
 
 Skim `07-open-questions.md` first. A number of design questions are
 already tracked there with context on what's been considered; if your
-proposal touches one of them, reply on that thread instead of opening a
-new one so the discussion stays in one place.
+proposal touches one of them, look for the matching open issue (the
+issue tracker carries one issue per open design question) and comment
+there instead of opening a new one, so the discussion stays in one place.
 
 ## What a good contribution looks like
 

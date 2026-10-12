@@ -1,8 +1,8 @@
-> **Status: working draft, not a ratified specification.** Extracted
-> Many points remain explicitly open; see
-> `07-open-questions.md`. Normative language (MUST/SHOULD/MAY) follows
-> RFC 2119 convention, used here to start shaping prose into checkable
-> requirements, not to claim anything below is finalised.
+> **Status: working draft, not a ratified specification.** Many points
+> remain explicitly open; see `07-open-questions.md`. Normative language
+> (MUST/SHOULD/MAY) follows RFC 2119 convention and is used here to shape
+> prose into checkable requirements, not to claim anything below is
+> finalised.
 
 # 04. Signed/Static Profile (working name: Nexa)
 
@@ -18,8 +18,7 @@ Nexa document's signature is computed over a Merkle tree of chunk
 hashes. This enables per-chunk
 provability - a specific chunk (or its absence, in a redaction) can be
 proven consistent with the signed tree without needing the whole
-document, directly supporting the redaction-with-proof use case
-(Section 4d).
+document, directly supporting the redaction-with-proof use case.
 
 ## Closed-world signature coverage (hard requirement)
 
@@ -67,10 +66,9 @@ signature block signing over the original Merkle root, every existing
 signature block, and a timestamp, reusing this profile's lineage model
 so the addition is traceable, never a silent mutation; and an
 independently-maintained algorithm-deprecation list feeds into the
-mandated plain-language trust summary (see Section 09
-idea 7) as the incident-response path when an algorithm is later judged
-compromised. This replaces the earlier vague "e.g. via timestamp
-chaining per PAdES-style precedent" phrasing with a concrete mechanism.
+mandated plain-language trust summary (see `08-capability-modules-and-feature-roadmap.md`,
+idea P7) as the incident-response path when an algorithm is later judged
+compromised.
 **Still needs dedicated outside cryptography and legal review before
 being finalised:** the actual signature/hash/post-quantum algorithms
 themselves, and the exact counter-signature byte format, remain open.

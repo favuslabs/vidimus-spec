@@ -1,8 +1,8 @@
-> **Status: working draft, not a ratified specification.** Extracted
-> Many points remain explicitly open; see
-> `07-open-questions.md`. Normative language (MUST/SHOULD/MAY) follows
-> RFC 2119 convention, used here to start shaping prose into checkable
-> requirements, not to claim anything below is finalised.
+> **Status: working draft, not a ratified specification.** Many points
+> remain explicitly open; see `07-open-questions.md`. Normative language
+> (MUST/SHOULD/MAY) follows RFC 2119 convention and is used here to shape
+> prose into checkable requirements, not to claim anything below is
+> finalised.
 
 # 01. Container and Manifest
 
@@ -66,7 +66,8 @@ roadmap.md`) and `fallback` (another chunk ID to render instead, or an
 inline plain-text notice). A reader lacking the named capability MUST
 use `fallback` if present, or otherwise render a plain-language notice
 naming the missing capability - the mechanical expression of the
-graceful-fallback rule Section 08 already requires in prose.
+graceful-fallback rule `08-capability-modules-and-feature-roadmap.md`
+already requires in prose.
 
 ## Content addressing (provisional, not yet part of this spec)
 

@@ -1,8 +1,8 @@
-> **Status: working draft, not a ratified specification.** Extracted
-> Many points remain explicitly open; see
-> `07-open-questions.md`. Normative language (MUST/SHOULD/MAY) follows
-> RFC 2119 convention, used here to start shaping prose into checkable
-> requirements, not to claim anything below is finalised.
+> **Status: working draft, not a ratified specification.** Many points
+> remain explicitly open; see `07-open-questions.md`. Normative language
+> (MUST/SHOULD/MAY) follows RFC 2119 convention and is used here to shape
+> prose into checkable requirements, not to claim anything below is
+> finalised.
 
 # 09. Cryptographic Agility and Confidentiality
 
@@ -59,7 +59,7 @@ breaking its seal or its history:
   entire prior signed state under a new algorithm, rather than
   replacing anything.
 - This reuses the existing lineage model
-  (`04-signed-static-profile.md`, Section 04, "Lineage model")
+  (`04-signed-static-profile.md`, "Lineage model")
   exactly: a counter-signature is a traceable addition, never a silent
   mutation, the same discipline already applied to content edits - but
   distinguished from a content edit because nothing about the visible
@@ -89,8 +89,8 @@ case. This is handled without a format change:
   against the current deprecated-algorithm list at verification time.
   If a document's *only* remaining valid signature uses a deprecated
   algorithm, the verifier MUST reflect a downgraded trust status in the
-  mandated plain-language trust summary (see Section 09
-  idea 7, e.g. "sealed under an algorithm since deprecated -
+  mandated plain-language trust summary (see `08-capability-modules-and-feature-roadmap.md`,
+  idea P7, e.g. "sealed under an algorithm since deprecated -
   re-signature recommended") rather than either silently trusting it or
   silently rejecting it.
 - If a counter-signature under a non-deprecated algorithm is present,
@@ -130,8 +130,8 @@ than a baseline requirement:
   capability module - encryption becomes a specific case of the
   already-specified `requires_capability`/`fallback` pattern, not a
   parallel mechanism.
-- This connects directly to the wallet-gated confidentiality idea (Section 09, EUDI
-  Wallet-native reveal conditions): a wallet-gated *reveal* condition
+- This connects directly to the wallet-gated confidentiality idea (`08-capability-modules-and-feature-roadmap.md`,
+  idea H2: EUDI Wallet-native reveal conditions): a wallet-gated *reveal* condition
   only ever hides content from a compliant reader's UI; genuine
   wallet-gated *confidentiality* would need this encryption capability
   underneath it, with the wallet credential used to release a

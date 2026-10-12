@@ -1,8 +1,8 @@
-> **Status: working draft, not a ratified specification.** Extracted
-> Many points remain explicitly open; see
-> `07-open-questions.md`. Normative language (MUST/SHOULD/MAY) follows
-> RFC 2119 convention, used here to start shaping prose into checkable
-> requirements, not to claim anything below is finalised.
+> **Status: working draft, not a ratified specification.** Many points
+> remain explicitly open; see `07-open-questions.md`. Normative language
+> (MUST/SHOULD/MAY) follows RFC 2119 convention and is used here to shape
+> prose into checkable requirements, not to claim anything below is
+> finalised.
 
 # 02. Content Model and Chunks
 
@@ -39,19 +39,17 @@ actually built.
 
 | Type ID | Reserved for |
 |---|---|
-| `translation-link` | Chunk-aligned parallel translations, legal-authority marking (Section 3d idea 1) |
-| `plain-language-summary` | The mandated plain-language content layer (Section 3d idea 8) |
-| `provenance-meta` | AI-authorship/delegation provenance (Section 3c idea 1) |
-| `verification-cost-meta` | Verification-cost/energy metadata (Section 3c idea 5) |
-| `representation-info` | OAIS self-describing spec-excerpt reference (Section 3d idea 4) |
+| `translation-link` | Chunk-aligned parallel translations, legal-authority marking (`08`, idea P1) |
+| `plain-language-summary` | The mandated plain-language content layer (`08`, idea P8) |
+| `provenance-meta` | AI-authorship/delegation provenance (`08`, idea H1) |
+| `verification-cost-meta` | Verification-cost/energy metadata (`08`, idea H5) |
+| `representation-info` | OAIS self-describing spec-excerpt reference (`08`, idea P4) |
 
 Adding a further chunk type later - v0-reserved or genuinely new - is a
 registry addition, not a format break, per the same forward-
 compatibility rule above.
 
 ## Media/content-type inventory
-
-Evaluation:
 
 **Clearly in scope:** structured text, tables, mathematical notation
 (the LaTeX requirement), vector diagrams/illustrations, still images/
@@ -61,7 +59,7 @@ and reading order for screen readers).
 
 **Explicitly not yet decided whether native or referenced-only:**
 embedded audio/video, interactive/executable content beyond reveal/
-hide, 3D/CAD content, geospatial/map data. Per Section 1e, the working
+hide, 3D/CAD content, geospatial/map data. The working
 lean is toward *referencing* rather than natively embedding these,
 keeping the core format smaller and more durable - but this is not
 decided.
@@ -74,7 +72,7 @@ whitelist rather than attempting to decode it.
 
 ## Accessibility metadata
 
-Named explicitly in Section 1e given the government/Behörden use case,
+Named explicitly given the government and public-authority use case,
 where accessibility is often a legal requirement, not a nice-to-have.
 A compliant container SHOULD carry alt-text and reading-order metadata
 for chunks that need it. Exact schema TBD.

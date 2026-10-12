@@ -1,18 +1,18 @@
-> **Status: working draft, not a ratified specification.** Extracted
-> Many points remain explicitly open; see
-> `07-open-questions.md`. Normative language (MUST/SHOULD/MAY) follows
-> RFC 2119 convention, used here to start shaping prose into checkable
-> requirements, not to claim anything below is finalised.
+> **Status: working draft, not a ratified specification.** Many points
+> remain explicitly open; see `07-open-questions.md`. Normative language
+> (MUST/SHOULD/MAY) follows RFC 2119 convention and is used here to shape
+> prose into checkable requirements, not to claim anything below is
+> finalised.
 
 # 07. Open Questions
 
 A running checklist of everything genuinely unresolved, gathered from
 across this project's design work so future spec work has one place to check
 rather than scattered flags. Nothing below should be assumed decided
-just because it appears in one of the other files above using
-normative language drawn from a current, revisable decision.
+just because another file states it in normative language: that
+language reflects the current, revisable state of the design.
 
-## Architecture (Section 3)
+## Architecture
 
 - ~~Exact chunk-index encoding: JSON vs. CBOR vs. something else.~~
   **Decided 2026-09-28: CBOR, with a mandatory JSON equivalence for
@@ -30,8 +30,7 @@ normative language drawn from a current, revisable decision.
   outline, 2026-09-28** (`09-crypto-agility-and-confidentiality.md`):
   an open algorithm registry, hybrid/multi-signature support, and
   counter-signatures as the after-the-fact retrofit path. **Still
-  needing dedicated outside cryptography and legal review** (see
-  further engineering work): the actual
+  needing dedicated outside cryptography and legal review**: the actual
   signature/hash/post-quantum algorithms, and the exact counter-
   signature byte format.
 - Whether the proposed optional per-chunk encryption capability
@@ -44,11 +43,10 @@ normative language drawn from a current, revisable decision.
 - Version/revision-history storage as deltas vs. full copies.
 - Manifest syntax for a chunk's capability-module dependency and
   fallback: **decided in outline 2026-09-28 (`requires_capability` +
-  `fallback` fields (see `01-container-and-manifest.md`),
-  `01-container-and-manifest.md`); the exact field-value grammar
-  (capability-ID/version format) remains open.**
+  `fallback` fields, see `01-container-and-manifest.md`); the exact
+  field-value grammar (capability-ID/version format) remains open.**
 
-## Content-model boundary (Section 1e / `02-content-model-and-chunks.md`)
+## Content-model boundary (`02-content-model-and-chunks.md`)
 
 - Whether audio/video, 3D/CAD, and geospatial data are natively
   embeddable or referenced-only for v0 - **explicitly deferred, not
@@ -58,14 +56,15 @@ normative language drawn from a current, revisable decision.
   adding a native embed type later without a format break.
 - Accessibility metadata's exact schema.
 
-## Naming and identity (Section 4)
+## Naming and identity
 
 - Whether "Vertex" and "Nexa" survive domain/trademark checks, or a
-  reserve candidate is needed instead (candidates tracked internally, not listed publicly to avoid pre-emptive domain/trademark squatting).
+  reserve candidate is needed instead (reserve candidates are not listed
+  publicly, to avoid pre-emptive domain/trademark squatting).
 - Nice-class trademark filing scope and cost, pending real counsel
   review.
 
-## Speculative, explicitly not decided (Section 3b) - superseded by 08
+## Speculative ideas A-D - superseded by 08
 
 **Superseded:** whether ideas A-D below are in scope at all is now
 resolved in `08-capability-modules-and-feature-roadmap.md` (baseline,
@@ -87,15 +86,15 @@ still genuinely undecided.
   Vertex-only capability module, per
   `08-capability-modules-and-feature-roadmap.md`.
 
-## Repository and process (Section 5a)
+## Repository and process
 
 - Exact point at which `vidimus-adapters`, a standalone verifier repo,
   and a viewer application get created, per the "no scaffolding ahead
   of what's real" sequencing rule.
-- Whether this spec skeleton itself gets promoted to canonical status
-  over an existing spec section, and when.
+- Whether and when this specification draft is promoted from working
+  draft to a versioned, canonical edition.
 
-## Governance (Section 1a / 5a)
+## Governance
 
 - Final decision on trademark ownership structure (an individual
   founder vs. a future association), independent of repository hosting
