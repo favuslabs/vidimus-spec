@@ -20,6 +20,7 @@ number yet; entries are grouped by date until a first tagged draft is cut.
 - `07-open-questions.md`: section headings no longer reference outside documents.
 
 ### Added
+- Proposed idea P10 (living documents with sealed snapshots): new section in `08`, a short proposed section in `04`, an open question in `07`. Marked as not decided; no normative requirement is added.
 - `LICENSE` is now the official CC BY 4.0 legal code, unmodified (so GitHub recognises it); the copyright line moved to `NOTICE.md`.
 - `SECURITY.md`, `.github/` issue and pull request templates, this changelog.
 

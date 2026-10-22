@@ -47,6 +47,19 @@ produces a new, linked document via a `derived-from` pointer back to
 the original - lineage is explicit and traceable, never a silent
 overwrite.
 
+## Snapshots of a living document (proposed, not decided)
+
+A Nexa document MAY be produced as a snapshot of a Vertex document that
+keeps being edited afterwards. Such a snapshot is an ordinary Nexa
+document: sealed as a whole, verified on its own, with the signer
+deciding per chunk what is sealed and what is detachable. It additionally
+records the state it was taken from: a `derived-from` pointer to the
+source document and to the previous snapshot, the root of the source's
+chunk tree and, if the source keeps a change log, the head of that log.
+Sealing a snapshot does not change the source document. The field layout
+and the log format are open; see `08-capability-modules-and-feature-roadmap.md`,
+idea P10, and `07-open-questions.md`.
+
 ## Crypto-agility and post-quantum readiness (launch-day requirement)
 
 The signature scheme MUST be

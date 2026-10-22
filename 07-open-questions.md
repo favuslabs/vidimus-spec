@@ -41,6 +41,12 @@ language reflects the current, revisable state of the design.
 - Media-type resolution for the archival-vs-efficient-codec tension
   (e.g. dual representations for archivally important images).
 - Version/revision-history storage as deltas vs. full copies.
+- Snapshots of a living document (`08-capability-modules-and-feature-roadmap.md`,
+  idea P10): whether sealed snapshots of a Vertex document are referenced or
+  embedded, whether this is v0 scope or a later module, the hash-chain
+  format of a change log, the handling of forks and of an undetectable
+  deletion of the newest embedded snapshot, a trusted time source, and the
+  legal reading of an automatic seal as against a personal signature.
 - Manifest syntax for a chunk's capability-module dependency and
   fallback: **decided in outline 2026-09-28 (`requires_capability` +
   `fallback` fields, see `01-container-and-manifest.md`); the exact

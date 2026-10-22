@@ -94,6 +94,22 @@ algorithms end up in the registry.
 | Multi-recipient chunk encryption (confidentiality, distinct from reveal/hide) | Vertex + Nexa | **Proposed capability module, not yet decided whether it ships in v0** (`07-open-questions.md`). | Would reuse this file's own `requires_capability`/`fallback` mechanism exactly as any other capability module: a reader without a decryption key uses the chunk's declared fallback. Directly relevant to idea H2 (EUDI Wallet-native reveal conditions) - true wallet-gated confidentiality (vs. wallet-gated declarative hiding) would need this module underneath it. |
 | Algorithm deprecation list | Nexa (verification requirement) | **Baseline for Nexa verifiers.** | Not a decoder-optional feature - a compliant Nexa verifier MUST check signature algorithm(s) against the current deprecated-algorithm list and reflect a downgraded trust status in the mandated plain-language trust summary (idea P7 above) when only a deprecated algorithm remains valid. |
 
+## Proposed idea P10: living documents with sealed snapshots (not decided)
+
+| Idea | Profile(s) | Tier | Resolution |
+|---|---|---|---|
+| P10. A Vertex document that keeps living issues sealed Nexa snapshots of itself and may carry them | Vertex + Nexa | **Proposed. Not yet decided whether it is baseline, a capability module, or a reserved extension point.** | A snapshot is a normal Nexa document derived from one exact state of the source (`04-signed-static-profile.md`, "Snapshots of a living document"); no new signature scheme is needed. Two ways to keep snapshots are to be compared: *referenced* (each snapshot is a separate file, the source holds an index of snapshot hashes) and *embedded* (snapshots are carried inside the Vertex container as complete Nexa containers in an append-only area). An embedded snapshot is verified on its own and must not weaken closed-world signature coverage: it is an opaque attachment from the point of view of the host, never merged into the host's signed tree. |
+
+Points the proposal has to answer before it can be promoted:
+
+- **Change log.** A snapshot is only as strong as the link between the log and the content. The log should form a hash chain so a verifier can check that one snapshot's log head follows from the previous one without anything removed in between.
+- **Reproducible views.** If a snapshot contains a rendered view, a verifier must be able to regenerate it from the sealed source and compare.
+- **Deletion.** A Vertex host is not sealed, so deleting its newest embedded snapshot is not detectable by the host alone; each snapshot therefore carries the hash of its predecessor, and an external anchor (a timestamp, a copy elsewhere) is needed for the newest one.
+- **What a snapshot proves.** The content state at a point in time, who sealed it, and that the log up to that point is intact. Not that the content was correct, nor that nothing was withheld in the source; forks (two snapshots with one parent) must be visible.
+- **Who seals.** A person confirming a state and an automatic seal by an organisation are different statements and need a visibly different presentation (see idea P9). Their legal weight differs and is not settled here.
+- **Partial snapshots.** The redaction-with-proof mechanism allows a snapshot of a subset with proof that the remainder was present and withheld.
+- **Self-contained.** A snapshot carries what it needs to be checked without the living document (see idea P4).
+
 ## Net effect on `07-open-questions.md`
 
 The "Speculative ideas A-D" list in
@@ -117,3 +133,6 @@ work, tracked as new entries below.
   trust summary (P7) and its Vertex-equivalent edit-status summary.
 - Exact schema for the AI-authorship/delegation and verification-cost
   metadata fields (H1 and H5).
+- Snapshots of a living document (idea P10): referenced or embedded in
+  v0, the change-log hash-chain format, the field layout of the source
+  record, the presentation of a person seal against a system seal.
